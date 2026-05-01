@@ -5,7 +5,7 @@ import React from 'react'
 const Navbar = () => {
 
     const items = <>
-        <li className='text-lg font-semibold'><Link href={'/home'}>Home</Link></li>
+        <li className='text-lg font-semibold'><Link href={'/'}>Home</Link></li>
         <li className='text-lg font-semibold'><Link href={'/courses'}>Courses</Link></li>
         <li className='text-lg font-semibold'><Link href={'/myprofile'}>My Profile</Link></li>
     </>

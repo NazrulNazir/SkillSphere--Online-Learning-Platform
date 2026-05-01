@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "6 Month",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch.",
+    "image": "https://img.magnific.com/free-photo/operation-process-performance-development-icon_53876-16541.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "Advanced JavaScript Mastery",
+    "instructor": "Jane Smith",
+    "duration": "4 Month",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Deep dive into modern JavaScript concepts and patterns.",
+    "image": "https://www.bdtask.com/blog/uploads/software-development-life-cycle.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "Michael Lee",
+    "duration": "3 Month",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Learn the basics of user interface and user experience design.",
+    "image": "https://www.admecindia.co.in/wp-content/uploads/2024/10/why-graphic-design-about-creativity-not-just-tools-1.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 4,
+    "title": "Digital Marketing Strategy",
+    "instructor": "Emily Davis",
+    "duration": "2 Month",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Master SEO, social media marketing, and online branding.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    "category": "Marketing"
+  },
+  {
+    "id": 5,
+    "title": "Python for Data Science",
+    "instructor": "David Wilson",
+    "duration": "1 Year",
+    "rating": 4.8,
+    "level": "Advanced",
+    "description": "Analyze data and build models using Python.",
+    "image": "https://www.fsm.ac.in/blog/wp-content/uploads/2022/07/FUqHEVVUsAAbZB0.jpg",
+    "category": "Data Science"
+  },
+  {
+    "id": 6,
+    "title": "React & Next.js Crash Course",
+    "instructor": "Sarah Johnson",
+    "duration": "8 Month",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Build modern web apps using React and Next.js.",
+    "image": "https://computercollegiate.com.pk/wp-content/uploads/2024/04/GetPaidStock.com-631c5f362171d-770x400-1.jpg",
+    "category": "Development"
+  }
+]

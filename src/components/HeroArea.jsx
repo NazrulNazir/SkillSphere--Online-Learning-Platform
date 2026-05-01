@@ -33,11 +33,10 @@ const HeroArea = () => {
                         <h3 className='text-2xl font-bold'>4.8</h3>
                         <p className='text-sm sm:text-lg'>Average Rating</p>
                     </div>
-                     {/* /images/video.png */}
                 </div>
             </div>
             <div className='mt-15 sm:mt-0'>
-                <Image width={600} height={900} src={'/images/transparent_bg.png'} alt={'user ratting'}></Image>
+                <Image className='h-150' width={600} height={900} src={'/images/hero.png'} alt={'user ratting'}></Image>
             </div>
         </div>
     )
