@@ -15,7 +15,7 @@ const Course = ({ course }) => {
         <p className='mt-3 text-md md:text-lg text-neutral-700 font-semibold'>{level}</p>
       </div>
       <p className='flex items-center gap-1 mt-3 text-lg font-bold text-neutral-700'>{rating} <span className='text-amber-500 text-xl'><IoIosStar /></span></p>
-      <Link href={`/courses/${course.id}`} className='btn btn-primary w-full mt-4'>View Details</Link>
+      <Link href={`/courses/${course.id}`} className='btn btn-primary w-full mt-4'>Course Details</Link>
     </div>
   )
 }

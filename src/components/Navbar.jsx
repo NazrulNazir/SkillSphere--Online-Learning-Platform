@@ -11,7 +11,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className='bg-base-100 shadow-sm'>
+        <div className='bg-base-100 shadow-sm sticky top-0 z-50'>
             <div className="navbar px-5 sm:-px-10 lg:px-20">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -32,12 +32,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-5">
-                    <a className="btn">Login</a>
+                    <Link href={'/login'} className="btn">Login</Link>
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
-                            {/* <img
-                            alt="Tailwind CSS Navbar component"
-                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" /> */}
                             <Image width={500}
                                 height={500} alt='user' src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"></Image>
                         </div>
