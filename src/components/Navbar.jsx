@@ -1,8 +1,15 @@
+'use client'
+
+import { signOut, useSession } from '@/lib/auth-client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 const Navbar = () => {
+
+    const { data, isPending } = useSession();
+    console.log(data);
+    const user = data?.user;
 
     const items = <>
         <li className='text-lg font-semibold'><Link href={'/'}>Home</Link></li>
@@ -32,12 +39,20 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-5">
-                    <Link href={'/login'} className="btn">Login</Link>
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <Image width={500}
-                                height={500} alt='user' src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"></Image>
-                        </div>
+                    <div>
+                        {user ? <div className='flex gap-3'>
+                            <button onClick={() => signOut()} href={'/login'} className="btn">SignOut</button>
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    {/* https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp */}
+                                    <Image width={500}
+                                        height={500} alt='user' src={user.image}></Image>
+                                </div>
+                            </div>
+                        </div> : 
+                        <div>
+                            <Link href={'/login'} className="btn">Login</Link>
+                        </div>}
                     </div>
                 </div>
             </div>

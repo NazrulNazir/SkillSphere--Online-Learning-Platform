@@ -18,6 +18,14 @@ const nextConfig = {
         port: '',
         pathname: '/**',
         search: '',
+      },
+      // https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkliIuVgejvDwavQJbzUFo2z99ptt-UGB43w&s
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+        port: '',
+        pathname: '/**',
+        search: '',
       }
       
     ],
