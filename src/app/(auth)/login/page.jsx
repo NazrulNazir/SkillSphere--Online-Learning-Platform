@@ -2,9 +2,11 @@
 
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link'
-import React from 'react'
+import { useState } from 'react';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const LogInPage = () => {
+    const [showPassword, setShowPassword] = useState(false);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -20,10 +22,10 @@ const LogInPage = () => {
         });
 
         // console.log('get form data', {data, error});
-        if(data){
+        if (data) {
             alert('Signin Sussessfully..');
         }
-        if(error){
+        if (error) {
             alert(error.message);
         }
 
@@ -35,12 +37,28 @@ const LogInPage = () => {
                 <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
                     <div className="card-body">
                         <form onSubmit={onSubmit}>
-                            <h1 className='text-4xl font-bold text-center text-primary'>Login</h1>
+                            <h1 className='text-4xl font-bold text-center text-primary mb-5'>Login</h1>
                             <fieldset className="fieldset">
                                 <label className="label">Email</label>
-                                <input type="email" name='email' className="input" placeholder="Email" />
-                                <label className="label">Password</label>
-                                <input type="password" name='password' className="input" placeholder="Password" />
+                                <input type="email" name='email' className="input" placeholder="Enter your email" />
+                                <div>
+                                    <label className="label mb-2">Password</label>
+                                    <div className="relative w-full max-w-sm">
+                                        <input
+                                            name='password'
+                                            type={showPassword ? "text" : "password"}
+                                            placeholder="Enter your password"
+                                            className="input"
+                                        />
+
+                                        <span
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            className="absolute right-7 text-lg top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
+                                        >
+                                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                        </span>
+                                    </div>
+                                </div>
                                 <div><a className="link link-hover">Forgot password?</a></div>
                                 <button className="btn btn-primary mt-4">Login</button>
                                 <p> Don’t have an account? <Link className='text-primary font-bold underline' href={'/register'}>Register</Link></p>

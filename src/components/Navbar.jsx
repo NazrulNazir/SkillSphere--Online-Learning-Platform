@@ -8,7 +8,7 @@ import React from 'react'
 const Navbar = () => {
 
     const { data, isPending } = useSession();
-    console.log(data);
+    // console.log(data);
     const user = data?.user;
 
     const items = <>
@@ -41,18 +41,18 @@ const Navbar = () => {
                 <div className="navbar-end gap-5">
                     <div>
                         {user ? <div className='flex gap-3'>
-                            <button onClick={() => signOut()} href={'/login'} className="btn">SignOut</button>
+                            <button onClick={() => signOut()} href={'/login'} className="btn btn-primary">SignOut</button>
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     {/* https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp */}
                                     <Image width={500}
-                                        height={500} alt='user' src={user.image}></Image>
+                                        height={500} alt='user' src={user.image || 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'}></Image>
                                 </div>
                             </div>
-                        </div> : 
-                        <div>
-                            <Link href={'/login'} className="btn">Login</Link>
-                        </div>}
+                        </div> :
+                            <div>
+                                <Link className='btn btn-primary' href={'/login'}>Login</Link>
+                            </div>}
                     </div>
                 </div>
             </div>
