@@ -41,7 +41,7 @@ const Navbar = () => {
                 <div className="navbar-end gap-5">
                     <div>
                         {user ? <div className='flex gap-3'>
-                            <button onClick={() => signOut()} href={'/login'} className="btn btn-primary">SignOut</button>
+                            <button onClick={() => signOut()} href={'/login'} className="btn btn-primary">Logout</button>
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     {/* https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp */}
