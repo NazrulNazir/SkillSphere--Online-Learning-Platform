@@ -1,5 +1,6 @@
 'use client';
 
+import SigninGoogle from '@/components/SigninGoogle';
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link'
 import { useState } from 'react';
@@ -35,12 +36,15 @@ const LogInPage = () => {
         <div>
             <div className="hero bg-base-200 min-h-[80vh]">
                 <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
-                    <div className="card-body">
+                    <div className="card-body px-8">
                         <form onSubmit={onSubmit}>
                             <h1 className='text-4xl font-bold text-center text-primary mb-5'>Login</h1>
+                            <div className='w-full'>
+                                <SigninGoogle></SigninGoogle>
+                            </div>
                             <fieldset className="fieldset">
                                 <label className="label">Email</label>
-                                <input type="email" name='email' className="input" placeholder="Enter your email" />
+                                <input type="email" name='email' className="input w-full" placeholder="Enter your email" />
                                 <div>
                                     <label className="label mb-2">Password</label>
                                     <div className="relative w-full max-w-sm">
@@ -48,12 +52,12 @@ const LogInPage = () => {
                                             name='password'
                                             type={showPassword ? "text" : "password"}
                                             placeholder="Enter your password"
-                                            className="input"
+                                            className="input w-full"
                                         />
 
                                         <span
                                             onClick={() => setShowPassword(!showPassword)}
-                                            className="absolute right-7 text-lg top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
+                                            className="absolute right-4 text-lg top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
                                         >
                                             {showPassword ? <FaEyeSlash /> : <FaEye />}
                                         </span>

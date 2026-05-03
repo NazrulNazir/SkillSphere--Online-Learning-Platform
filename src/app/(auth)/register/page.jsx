@@ -1,4 +1,5 @@
 'use client';
+import SigninGoogle from '@/components/SigninGoogle';
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
@@ -36,12 +37,13 @@ const RegisterPage = () => {
     }
 
     return (
-        <div>
-            <div className="hero bg-base-200 min-h-[80vh]">
+        <div className='my-10'>
+            <div className="hero min-h-[80vh]">
                 <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
                     <div className="card-body">
                         <form action="" onSubmit={onSubmit}>
                             <h1 className='text-4xl font-bold text-center text-primary'>Register</h1>
+                            <SigninGoogle></SigninGoogle>
                             <fieldset className="fieldset">
                                 <label className="label">Name</label>
                                 <input type="text" name='name' className="input" placeholder="Your Name" />

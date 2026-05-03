@@ -7,6 +7,7 @@ import { useState } from "react";
 const UpdateUser = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
+    const [image, setImage] = useState('');
 
     const router = useRouter();
 
@@ -14,8 +15,9 @@ const UpdateUser = () => {
         e.preventDefault();
 
         try {
-            if (name) {
+            if (name, image) {
                 await authClient.updateUser({
+                    image: image,
                     name: name,
                 });
             }
@@ -46,7 +48,15 @@ const UpdateUser = () => {
                         type="text"
                         placeholder="Enter your Name"
                         value={name}
-                        onChange={(e)=> setName(e.target.value)}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+
+                    <input
+                        type="text"
+                        className="input"
+                        placeholder="Change image url"
+                        value={image}
+                        onChange={(e) => setImage(e.target.value)}
                     />
 
                     <input

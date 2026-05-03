@@ -13,7 +13,11 @@ const CourseDetails = async ({ params }) => {
   const { category, description, image, instructor, level, rating, title, duration } = details;
 
   return (
-    <div className='flex justify-center items-center my-8 px-5'>
+    <div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 2 }}
+      transition={{ duration: 1 }}
+      className='flex justify-center items-center my-8 px-5'>
       <div className='bg-base-300 px-10 py-5 rounded-lg max-w-150'>
         <Image className=' mb-5 rounded-lg' height={250} width={450} src={image} alt={title}></Image>
         <h2 className='text-xl md:text-2xl font-bold text-slate-800'>{title}</h2>

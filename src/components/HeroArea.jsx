@@ -1,14 +1,18 @@
+'use client';
 import Image from 'next/image'
-import React from 'react'
 import { FaArrowRightLong, FaStar } from 'react-icons/fa6'
 import { HiUserGroup } from 'react-icons/hi'
 import { IoPlayCircleOutline } from 'react-icons/io5'
-import { RiContactsBook2Fill } from 'react-icons/ri'
 import { SiMdbook } from 'react-icons/si'
+import { motion } from "framer-motion";
 
 const HeroArea = () => {
     return (
-        <div className='md:flex justify-between pl-7 md:pl-15'>
+        <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className='md:flex justify-between pl-7 md:pl-15'>
             <div className='flex flex-col justify-center pt-15 sm:pt-0 pr-5'>
                 <p className='bg-base-200 inline-block px-2 py-2 rounded-full text-primary font-bold w-55 text-md text-center'>🚀 Learn. Grow. Success</p>
                 <h1 className='text-3xl sm:text-5xl font-bold text-slate-800 mt-8'>Upgrade Your Skills <span className='text-primary'>Today 🚀</span></h1>
@@ -38,7 +42,7 @@ const HeroArea = () => {
             <div className='mt-15 sm:mt-0'>
                 <Image className='h-150' width={600} height={900} src={'/images/hero.png'} alt={'user ratting'}></Image>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
