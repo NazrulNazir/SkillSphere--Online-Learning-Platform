@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const RegisterPage = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -29,10 +30,12 @@ const RegisterPage = () => {
         }
 
         if (error) {
-            alert('Signup Failed: ' + error.message);
+            // alert('Signup Failed: ' + error.message);
+            toast.error('Signup Failed: ' + error.message)
         }
         else if (data) {
-            alert('Account create successfully. Please verify your account');
+            // alert('Account create successfully. Please verify your account');
+            toast.success('Account create successfully. Please verify your account')
         }
     }
 

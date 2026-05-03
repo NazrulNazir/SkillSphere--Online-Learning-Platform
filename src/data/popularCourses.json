@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "slug": "web-development-bootcamp",
+    "image": "https://skillspace-60033627958.development.catalystserverless.in/app/images2/web1.jpeg",
+    "instructor": {
+      "name": "Jahid Hasan",
+      "avatar": "/images/instructors/jahid.jpg"
+    },
+    "rating": 4.8,
+    "reviews": 2450,
+    "price": 1499,
+    "level": "Beginner",
+    "duration": "12h 45m"
+  },
+  {
+    "id": 2,
+    "title": "Python for Data Science & Machine Learning",
+    "slug": "python-data-science",
+    "image": "https://digicomtrainingacademy.org/wp-content/uploads/2024/08/course-description-digicom-training-academy-goa-4.jpg",
+    "instructor": {
+      "name": "Anika Rahman",
+      "avatar": "/images/instructors/anika.jpg"
+    },
+    "rating": 4.9,
+    "reviews": 1870,
+    "price": 1799,
+    "level": "Intermediate",
+    "duration": "15h 20m"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Design Masterclass",
+    "slug": "ui-ux-design",
+    "image": "https://cdn.ostad.app/course/photo/2024-12-19T15-52-04.170Z-Course%20Thumbnail%2013%20(1).jpg",
+    "instructor": {
+      "name": "Rifat Ahmed",
+      "avatar": "/images/instructors/rifat.jpg"
+    },
+    "rating": 4.7,
+    "reviews": 1320,
+    "price": 1299,
+    "level": "Beginner",
+    "duration": "10h 30m"
+  }
+]

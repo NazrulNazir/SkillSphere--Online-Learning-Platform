@@ -16,6 +16,7 @@ const CoursesPage = () => {
   // console.log(courses);
   return (
     <div className='mt-10 px-15'>
+      <h1 className='text-4xl font-bold text-neutral-800 mb-10'>All Courses</h1>
       <div className='flex gap-2 justify-start items-center'>
         <label className="input border border-gray-500">
           <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

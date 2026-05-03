@@ -3,9 +3,10 @@
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const UpdateUser = () => {
-    const [email, setEmail] = useState('');
+    // const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
 
@@ -22,18 +23,18 @@ const UpdateUser = () => {
                 });
             }
 
-            if (email) {
-                await authClient.changeEmail({
-                    newEmail: email,
-                });
-            }
+            // if (email) {
+            //     await authClient.changeEmail({
+            //         newEmail: email,
+            //     });
+            // }
 
-            alert("User updated successfully");
+            toast.success("User updated successfully");
 
             router.push('/myprofile');
         } catch (error) {
-            console.log(error);
-            alert("Update failed");
+            // console.log(error);
+            toast.error("Update failed");
         }
     };
 
@@ -46,7 +47,7 @@ const UpdateUser = () => {
                     <input
                         className="input"
                         type="text"
-                        placeholder="Enter your Name"
+                        placeholder="Your Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
@@ -54,18 +55,18 @@ const UpdateUser = () => {
                     <input
                         type="text"
                         className="input"
-                        placeholder="Change image url"
+                        placeholder="Image url"
                         value={image}
                         onChange={(e) => setImage(e.target.value)}
                     />
 
-                    <input
+                    {/* <input
                         className="input"
                         type="email"
                         placeholder="Enter new email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                    />
+                    /> */}
 
                     <button className="btn btn-primary w-full" type="submit">
                         Update User

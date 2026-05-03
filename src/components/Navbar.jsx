@@ -4,6 +4,7 @@ import { signOut, useSession } from '@/lib/auth-client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { toast } from 'react-toastify'
 
 const Navbar = () => {
 
@@ -31,7 +32,7 @@ const Navbar = () => {
                             {items}
                         </ul>
                     </div>
-                    <button className="text-2xl hidden lg:block font-bold">Skill<span className='text-primary'>Sphere</span></button>
+                    <Link href={'/'} className="text-2xl hidden lg:block font-bold">Skill<span className='text-primary'>Sphere</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-2xl">
@@ -41,7 +42,7 @@ const Navbar = () => {
                 <div className="navbar-end gap-5">
                     <div>
                         {user ? <div className='flex gap-3'>
-                            <button onClick={() => signOut()} href={'/login'} className="btn btn-primary">Logout</button>
+
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     {/* https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp */}
@@ -49,6 +50,11 @@ const Navbar = () => {
                                         height={500} alt='user' src={user.image || 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'}></Image>
                                 </div>
                             </div>
+                            <button onClick={() => {
+                                signOut();
+                                toast.info("Logout successfully..");
+                            }}
+                                href={'/login'} className="btn btn-primary">Logout</button>
                         </div> :
                             <div>
                                 <Link className='btn btn-primary' href={'/login'}>Login</Link>

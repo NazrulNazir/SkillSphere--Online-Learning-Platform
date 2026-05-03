@@ -2,6 +2,7 @@
 import { authClient } from '@/lib/auth-client';
 import React from 'react'
 import { FcGoogle } from 'react-icons/fc'
+import { toast } from 'react-toastify';
 
 const SigninGoogle = () => {
 
@@ -11,9 +12,9 @@ const SigninGoogle = () => {
         });
 
         if(data){
-            alert('Login with google successfully.');
+            toast.success('Login with google successfully.');
         }else{
-            alert('Login Faild.')
+            toast.error('Login Faild.')
         }
     }
 

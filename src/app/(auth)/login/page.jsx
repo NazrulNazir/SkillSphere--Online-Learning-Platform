@@ -5,6 +5,7 @@ import { authClient } from '@/lib/auth-client';
 import Link from 'next/link'
 import { useState } from 'react';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from 'react-toastify';
 
 const LogInPage = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -23,11 +24,12 @@ const LogInPage = () => {
         });
 
         // console.log('get form data', {data, error});
+       
         if (data) {
-            alert('Signin Sussessfully..');
+            toast.success("Signin Sussessfully..");
         }
         if (error) {
-            alert(error.message);
+            toast.error(error.message);
         }
 
     }
