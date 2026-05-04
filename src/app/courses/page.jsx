@@ -19,7 +19,7 @@ const CoursesPage = () => {
 
   // console.log(courses);
   return (
-    <div className='mt-10 px-15'>
+    <div className='mt-10 px-15 mb-15'>
       <h1 className='text-4xl font-bold text-neutral-800 mb-10'>All Courses</h1>
       <div className='flex gap-2 justify-start items-center'>
         <label className="input border border-gray-500">
