@@ -10,7 +10,7 @@ This project is built following a structured requirement with authentication, pr
 
 ## 🚀 Live URL
 
-👉 http://localhost:3000/
+👉 https://skill-sphere-online-learning-platfo-tawny.vercel.app/
 
 ---
 
