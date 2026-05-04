@@ -1,36 +1,165 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎓 SkillSphere – Online Learning Platform
 
-## Getting Started
+## 📌 Project Overview
 
-First, run the development server:
+**SkillSphere** is a modern online learning platform where users can explore courses, watch lessons, and enroll in skill-based programs like Web Development, Design, Marketing, and more.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project is built following a structured requirement with authentication, protected routes, responsive UI, and dynamic course browsing.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Live URL
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+👉 http://localhost:3000/
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 Purpose
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The goal of this project is to create a fully functional learning platform with:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* User authentication
+* Course exploration
+* Protected course details
+* Profile management
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✨ Key Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🔐 Authentication
+
+* Email & Password Login/Register
+* Google Social Login
+* Error handling with toast notifications
+* Redirect after login
+
+---
+
+### 🏠 Home Page
+
+* 🎥 Hero Section (Banner)
+* 🔥 Popular Courses (Top rated)
+* 📌 Learning Tips Section
+* 🏆 Top Instructors
+* 📈 Extra Section: Trending Courses / New Releases
+
+---
+
+### 📚 Courses
+
+* All Courses Page (Dynamic JSON data)
+* Search functionality (by course title)
+* Course Details Page (🔒 Protected Route)
+* Redirect to login if not authenticated
+
+---
+
+### 👤 My Profile
+
+* View user info (Name, Email, Image)
+* Update profile (Name & Photo URL)
+
+---
+
+### 🎨 UI & UX
+
+* Fully Responsive (Mobile, Tablet, Desktop)
+* Unique and modern design
+* Smooth animations using Motion
+
+---
+
+### 🧩 Layout Structure
+
+* 🔝 Navbar
+
+  * Logo (SkillSphere)
+  * Navigation Links (Home, Courses, My Profile)
+  * Auth-based UI (Login/Register OR Avatar + Logout)
+
+* 🔻 Footer
+
+  * Contact Info
+  * Social Links
+  * Terms & Conditions
+  * Privacy Policy
+
+---
+
+### ⚙️ Technical Features
+
+* Next.js App Router
+* Protected Routes
+* Environment Variables for secure config
+* Loader during data fetching
+* Custom 404 (Not Found) page
+* No crash on page reload
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+* Next.js
+* React
+* Tailwind CSS
+* DaisyUI
+
+### Animation
+
+* Motion (Framer Motion)
+
+### Authentication
+
+* Better Auth
+
+### Notifications
+
+* React Toastify
+
+---
+
+## 📦 NPM Packages
+
+* `next`
+* `react`
+* `tailwindcss`
+* `daisyui`
+* `motion`
+* `better-auth`
+* `react-toastify`
+
+---
+
+## 📱 Responsiveness
+
+The website is fully responsive across:
+
+* 📱 Mobile
+* 💻 Laptop
+* 🖥️ Desktop
+
+---
+
+## 🧪 Challenges Implemented
+
+### 🔍 Search Functionality
+
+* Search courses by title in All Courses page
+
+### 👤 Profile Update
+
+* Update Name & Profile Image
+* Separate update route
+
+----
+
+## 🙌 Conclusion
+
+SkillSphere is a complete beginner-friendly learning platform demonstrating authentication, protected routing, and modern UI development using Next.js.
+
+---
+
+⭐ Don’t forget to star the repo if you like this project!

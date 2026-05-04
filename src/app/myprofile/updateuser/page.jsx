@@ -49,6 +49,7 @@ const UpdateUser = () => {
                         type="text"
                         placeholder="Your Name"
                         value={name}
+                        required
                         onChange={(e) => setName(e.target.value)}
                     />
 
@@ -57,6 +58,7 @@ const UpdateUser = () => {
                         className="input"
                         placeholder="Image url"
                         value={image}
+                        required
                         onChange={(e) => setImage(e.target.value)}
                     />
 

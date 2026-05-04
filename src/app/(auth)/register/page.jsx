@@ -10,11 +10,23 @@ import { toast } from 'react-toastify';
 const RegisterPage = () => {
     const [showPassword, setShowPassword] = useState(false);
     const router = useRouter();
+    const [errPass, setErrPass] = useState('');
     const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const userData = Object.fromEntries(formData.entries());
         // console.log("Form Data:", userData);
+
+        // password condition
+        const password = userData.password;
+        const hasMinLength = password.length >= 8;
+
+        // console.log(errPass)
+        setErrPass('');
+        if (!hasMinLength) {
+            setErrPass("Password must be at least 8 characters long");
+        }
+
 
 
         const { data, error } = await authClient.signUp.email({
@@ -26,7 +38,7 @@ const RegisterPage = () => {
         });
         // console.log('Signup Failed:', { data, error });
         if (data) {
-            router.push("/login"); // ✅ manually redirect
+            router.push("/login");
         }
 
         if (error) {
@@ -49,23 +61,25 @@ const RegisterPage = () => {
                             <SigninGoogle></SigninGoogle>
                             <fieldset className="fieldset">
                                 <label className="label">Name</label>
-                                <input type="text" name='name' className="input" placeholder="Your Name" />
+                                <input type="text" name='name' className="input" placeholder="Your Name" required />
 
                                 <label className="label">Email</label>
-                                <input type="email" name='email' className="input" placeholder="Your Email" />
+                                <input type="email" name='email' className="input" placeholder="Your Email" required />
 
                                 <label className='label'>Photo URL</label>
-                                <input className='input' type="text" name='photo_URL' placeholder='Enter Photo URL' />
+                                <input className='input' type="text" name='photo_URL' placeholder='Enter Photo URL' required/>
 
                                 <div>
                                     <label className="label mb-2">Password</label>
                                     <div className="relative w-full max-w-sm">
                                         <input
+                                            onChange={() => setErrPass('')}
                                             name='password'
                                             type={showPassword ? "text" : "password"}
                                             placeholder="Enter your password"
                                             className="input"
                                         />
+                                        <p className='text-red-600 font-semibold mt-2 text-[15px]'>{errPass}</p>
 
                                         <span
                                             onClick={() => setShowPassword(!showPassword)}
