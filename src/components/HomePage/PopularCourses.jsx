@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 import { getPropularCourse } from '@/lib/course'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -7,26 +7,31 @@ import { IoIosStar } from 'react-icons/io';
 import { RiArrowRightLongLine } from 'react-icons/ri';
 
 const PopularCourses = () => {
-    // const { category, description, image, instructor, level, rating, title, duration } = course;
     const courses = getPropularCourse();
     console.log(courses);
     return (
-        <div className='px-5 sm:px-10 lg:px-15 my-20'>
+        <div
+            className='px-5 sm:px-10 lg:px-15 my-20'>
             <div className='flex justify-between items-center'>
                 <div>
-                    <h1 className='text-5xl font-bold text-neutral-800'>Popular Courses</h1>
-                    <p className='text-2xl text-neutral-500 font-semibold mt-3'>Top rated courses from our platform</p>
+                    <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-800'>Popular Courses</h1>
+                    <p className='sm:text-xl text-neutral-500 font-semibold mt-3'>Top rated courses from our platform</p>
                 </div>
-                <Link href={'./courses'} className='text-xl text-primary font-bold'>
+                <Link href={'./courses'} className='text-xl text-primary font-bold hidden md:flex'>
                     <div className='flex items-center justify-center gap-3'><span>View All Course</span> <RiArrowRightLongLine /></div>
                 </Link>
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10'>
                 {
-                    courses.map(course => <div key={course.id} course={course}>
+                    courses.map(course => <motion.div
+                        key={course.id}
+                        course={course}
+                        initial={{ y: 100, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.5 }}
+                    >
                         <div
-                            // motion.div
-                            // whileHover={{ scale: 1.05 }}
                             className='bg-gray-200 pb-8 rounded-lg card flex flex-col'
                         >
                             <Image className='w-full h-60 mb-5 rounded-t-2xl' height={300} width={300} src={course.image} alt={course.title}></Image>
@@ -37,7 +42,7 @@ const PopularCourses = () => {
                                 <button className='btn btn-primary w-full mt-4'>Course Details</button>
                             </div>
                         </div>
-                    </div>)
+                    </motion.div>)
                 }
             </div>
         </div>

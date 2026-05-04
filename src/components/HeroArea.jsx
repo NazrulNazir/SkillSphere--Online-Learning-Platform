@@ -18,8 +18,8 @@ const HeroArea = () => {
                 <h1 className='text-3xl sm:text-5xl font-bold text-slate-800 mt-8'>Upgrade Your Skills <span className='text-primary'>Today 🚀</span></h1>
                 <p className='text-md sm:text-xl mt-4'>Learn from industry experts and unlock your true potential.</p>
                 <div className='flex gap-2 sm:gap-5 mt-10'>
-                    <button className='py-3 sm:py-2 px-3 bg-primary text-white rounded-full text-md sm:text-lg flex items-center justify-center gap-3'>Explore Courses   <FaArrowRightLong /></button>
-                    <button className='px-3 py-3 sm:py-2 bg-white rounded-full text-md sm:text-lg flex items-center justify-center gap-2'>Watch Demo <IoPlayCircleOutline /></button>
+                    <button className='py-3 sm:py-2 px-2 sm:px-4 bg-primary text-white rounded-full text-md sm:text-lg flex items-center justify-center gap-3'>Explore Courses   <FaArrowRightLong /></button>
+                    <button className='px-2 sm:px-4 py-3 sm:py-2 bg-white rounded-full text-md sm:text-lg flex items-center justify-center gap-2'>Watch Demo <IoPlayCircleOutline /></button>
                 </div>
                 <div className='flex gap-5 md:gap-15 text-center mt-15'>
                     <div className='flex flex-col justify-center items-center gap-2'>
@@ -40,7 +40,7 @@ const HeroArea = () => {
                 </div>
             </div>
             <div className='mt-15 sm:mt-0'>
-                <Image className='h-150' width={600} height={900} src={'/images/hero.png'} alt={'user ratting'}></Image>
+                <Image className='h-100 sm:h-150' width={600} height={900} src={'/images/hero.png'} alt={'user ratting'}></Image>
             </div>
         </motion.div>
     )

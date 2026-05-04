@@ -5,65 +5,107 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { toast } from 'react-toastify'
+import { motion } from "framer-motion";
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
 
-    const { data, isPending } = useSession();
-    // console.log(data);
+    const { data } = useSession();
     const user = data?.user;
 
-    const items = <>
-        <li className='text-lg font-semibold'><Link href={'/'}>Home</Link></li>
-        <li className='text-lg font-semibold'><Link href={'/courses'}>Courses</Link></li>
-        <li className='text-lg font-semibold'><Link href={'/myprofile'}>My Profile</Link></li>
-    </>
+    const pathname = usePathname(); // 🔥 current route
+
+    const tabs = [
+        { label: "Home", href: "/" },
+        { label: "Courses", href: "/courses" },
+        { label: "My Profile", href: "/myprofile" },
+    ];
+
+    const items = tabs.map((item) => {
+        const isActive = pathname === item.href;
+
+        return (
+            <li key={item.label}>
+                <Link href={item.href}>
+                    <motion.div
+                        className="relative px-3 py-1 cursor-pointer"
+                    >
+                        {item.label}
+
+                        {isActive && (
+                            <motion.div
+                                layoutId="underline"
+                                className="absolute left-0 right-0 -bottom-1 h-0.5 bg-blue-500"
+                            />
+                        )}
+                    </motion.div>
+                </Link>
+            </li>
+        );
+    });
 
     return (
         <div className='bg-base-100 shadow-sm sticky top-0 z-50'>
             <div className="navbar px-5 sm:-px-10 lg:px-20">
+
+                {/* LEFT */}
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                            ☰
                         </div>
-                        <ul
-                            tabIndex="-1"
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-bold text-2xl">
+                        <ul className="menu menu-sm dropdown-content bg-base-100 mt-3 w-52 p-2 shadow text-lg">
                             {items}
                         </ul>
                     </div>
-                    <Link href={'/'} className="text-2xl hidden lg:block font-bold">Skill<span className='text-primary'>Sphere</span></Link>
+
+                    <Link href={'/'} className="text-2xl hidden lg:block font-bold">
+                        Skill<span className='text-primary'>Sphere</span>
+                    </Link>
                 </div>
+
+                {/* CENTER */}
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-2xl">
+                    <ul className="menu menu-horizontal px-1 text-lg">
                         {items}
                     </ul>
                 </div>
-                <div className="navbar-end gap-5">
-                    <div>
-                        {user ? <div className='flex gap-3'>
 
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                {/* RIGHT */}
+                <div className="navbar-end gap-5">
+                    {user ? (
+                        <div className='flex gap-3 items-center'>
+                            <div className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    {/* https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp */}
-                                    <Image width={500}
-                                        height={500} alt='user' src={user.image || 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'}></Image>
+                                    <Image
+                                        width={40}
+                                        height={40}
+                                        alt='user'
+                                        src={user.image || 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'}
+                                    />
                                 </div>
                             </div>
-                            <button onClick={() => {
-                                signOut();
-                                toast.info("Logout successfully..");
-                            }}
-                                href={'/login'} className="btn btn-primary">Logout</button>
-                        </div> :
-                            <div>
-                                <Link className='btn btn-primary' href={'/login'}>Login</Link>
-                            </div>}
-                    </div>
+
+                            <button
+                                onClick={() => {
+                                    signOut();
+                                    toast.info("Logout successfully..");
+                                }}
+                                className="btn btn-primary"
+                            >
+                                Logout
+                            </button>
+                        </div>
+                    ) : (
+                        <Link className='btn btn-primary' href={'/login'}>
+                            Login
+                        </Link>
+                    )}
                 </div>
+
             </div>
         </div>
     )
 }
 
-export default Navbar
+export default Navbar;

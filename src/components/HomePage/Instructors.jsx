@@ -1,3 +1,5 @@
+'use client';
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { IoIosStar } from 'react-icons/io'
 
@@ -36,10 +38,15 @@ const Instructors = () => {
   ]
 
   return (
-    <div className='px-5 sm:px-10 lg:px-15'>
-      <h1 className='text-4xl font-bold text-neutral-800 '>Top Instructors</h1>
-      <p className='text-xl font-semibold text-neutral-500 mt-3'>Learn from the best industry experts</p>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center gap-5 mb-15 mt-10'>
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
+      className='px-5 sm:px-10 lg:px-15'>
+      <h1 className='text-3xl md:text-4xl font-bold text-neutral-800 '>Top Instructors</h1>
+      <p className='sm:text-xl font-semibold text-neutral-500 mt-3'>Learn from the best industry experts</p>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-5 mb-15 mt-10'>
         {
           instructors.map(instructor => (
             <div key={instructor.id} className='border border-gray-300 py-8 px-4 flex flex-col justify-center items-center rounded-lg'>
@@ -51,7 +58,7 @@ const Instructors = () => {
           ))
         }
       </div>
-    </div>
+    </motion.div>
   )
 }
 
